@@ -1,6 +1,8 @@
 import Sequelize from 'sequelize';
 const sequelizeConnection = require('../config/sequelizeconfig');
 
+
+module.exports = function() {
 const User = sequelizeConnection.define('user', {
     // attributes
     firstName: {
@@ -38,5 +40,6 @@ const User = sequelizeConnection.define('user', {
     //     }
     //   },
   });
+  return User;
+}
 
-export default User;

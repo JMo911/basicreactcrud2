@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class CreateUserPage extends React.Component {
     constructor(props){
@@ -17,7 +18,17 @@ class CreateUserPage extends React.Component {
         //allows us to stop the form submission from refreshing the page
         event.preventDefault();
         const data = this.state;
-        console.log("first name: " + data.firstname + "\nlast name: " + data.lastname + "\n username: " + data.username + "\n pass: " + data.password);
+        console.log(data);
+        // console.log("first name: " + data.firstname + "\nlast name: " + data.lastname + "\n username: " + data.username + "\n pass: " + data.password);
+        //need to send this user to the batabase with validation.. redirect back to create page if doesn't pass
+        axios.post('/api/createuser/', data)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
     }
 
     handleInputChange = (event) => {
@@ -27,6 +38,7 @@ class CreateUserPage extends React.Component {
             [event.target.name]: event.target.value
         })
     }
+
 
 
     render() {
