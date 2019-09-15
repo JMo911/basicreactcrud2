@@ -18,25 +18,25 @@ const User = sequelizeConnection.define('user', {
     password: {
         type: Sequelize.STRING,
         allowNull: false
-    },
-    car: {
-        licensePlate: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        make: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        model: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        color: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        }
-      },
+    }
+    // car: {
+    //     licensePlate: {
+    //         type: Sequelize.STRING,
+    //         allowNull: false,
+    //     },
+    //     make: {
+    //         type: Sequelize.STRING,
+    //         allowNull: false,
+    //     },
+    //     model: {
+    //         type: Sequelize.STRING,
+    //         allowNull: false,
+    //     },
+    //     color: {
+    //         type: Sequelize.STRING,
+    //         allowNull: false,
+    //     }
+    //   },
   });
 
 export default User;

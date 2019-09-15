@@ -5,6 +5,8 @@ USE basicreactcrud2;
 
 
 CREATE TABLE users (
-username varchar(100) NOT NULL,
-password varchar(100) NOT NULL
+    firstname varchar(100) NOT NULL,
+    lastname varchar(100) NOT NULL,
+    username varchar(100) NOT NULL,
+    password varchar(100) NOT NULL
 );
